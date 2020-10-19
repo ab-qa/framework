@@ -1,0 +1,6 @@
+# define your objects model using xpath.
+# e.g.
+#img.perfecto.home.page.logo=css=.logo>a
+#btn.perfecto.home.hamburger.navigation.menu=css=.tb-megamenu-button
+#lnk.perfecto.home.menu.option=xpath=//a[contains(text(),'%s')]
+#lbl.perfecto.solutions.page.title.benefits=xpath=//*[contains(text(),'Benefits of Perfecto')]

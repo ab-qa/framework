@@ -1,0 +1,111 @@
+[
+	{
+		"recId": "Positive Scenario",
+		"get.eclaims.token": 
+		{
+			"headers": 
+			{
+				"Content-Type": "application/json"
+			},
+
+			"endPoint": "",
+			"baseUrl": "https://manulife-operations-preprod-ext.apigee.net/v1/mg/oauth2/token",
+			"method": "POST",
+			"query-parameters": 
+			{
+				
+			},
+
+			"body": 
+			{
+				"client_id": "2WfjhBGtwzV8Wtal2FGpPbGB0Ja7t2sP",
+				"client_secret": "qA8CyWrJ4ZsIOXD0",
+				"grant_type": "client_credentials"
+			},
+
+			"form-parameters": 
+			{
+				
+			}
+		},
+
+		"post.eclaims.eligibility.check": 
+		{
+			"headers": 
+			{
+				"Authorization": "Bearer ${Token}",
+				"Content-Type": "application/json"
+			},
+
+			"endPoint": "",
+			"baseUrl": "https://eligibility-check-service-hk-shared-sit.apps.eas.pcf.manulife.com/api/v1/enterprisePlatformService/eligibilityCheck/check",
+			"method": "POST",
+			"query-parameters": 
+			{
+				
+			},
+
+			"body": "file:data/body/policyBodyPositive.json",
+
+			"form-parameters": 
+			{
+				
+			}
+		}
+	},
+
+	{
+		"recId": "Negative Scenario",
+		"get.eclaims.token": 
+		{
+			"headers": 
+			{
+				"Content-Type": "application/json"
+			},
+
+			"endPoint": "",
+			"baseUrl": "https://manulife-operations-preprod-ext.apigee.net/v1/mg/oauth2/token",
+			"method": "POST",
+			"query-parameters": 
+			{
+				
+			},
+
+			"body": 
+			{
+				"client_id": "2WfjhBGtwzV8Wtal2FGpPbGB0Ja7t2sP",
+				"client_secret": "qA8CyWrJ4ZsIOXD0",
+				"grant_type": "client_credentials"
+			},
+
+			"form-parameters": 
+			{
+				
+			}
+		},
+
+		"post.eclaims.eligibility.check": 
+		{
+			"headers": 
+			{
+				"Authorization": "Bearer ${Token}",
+				"Content-Type": "application/json"
+			},
+
+			"endPoint": "",
+			"baseUrl": "https://eligibility-check-service-hk-shared-sit.apps.eas.pcf.manulife.com/api/v1/enterprisePlatformService/eligibilityCheck/check",
+			"method": "POST",
+			"query-parameters": 
+			{
+				
+			},
+
+			"body": "file:data/body/policyBodyNegative.json",
+
+			"form-parameters": 
+			{
+				
+			}
+		}
+	}
+]

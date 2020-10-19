@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WebServices Demo Suite" verbose="0" parallel="none">
+	<listeners>
+		<listener class-name="com.quantum.listerners.QuantumReportiumListener" />
+	</listeners>
+
+	<test name="Web Service Example" enabled="true">
+		<!--  <parameter name="scenario.file.loc" value="src/main/resources/scenarios" /> -->
+		<parameter name="env.resources" value="src/main/resources/restServices" />
+		<groups>
+			<run>
+			    <!-- TODO: Change the TagName to something in your Steps -->
+				<include name="@EclaimPOCJSONSample" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" ></class>
+		</classes>
+	</test>
+</suite>

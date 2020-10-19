@@ -1,0 +1,8 @@
+
+manulife.dss.login.agent=xpath=//*[text()='Agent']
+manulife.dss.login.customer=xpath=//*[text()='Customer']
+
+manulife.dss.login.email=xpath=//*[@placeholder='E-mail']
+manulife.dss.login.password=xpath=//*[@placeholder='Password']
+manulife.dss.login.loginbtn=xpath=//button[@class='login-button mat-button']
+manulife.dss.login.logout.button=xpath=/html/body/app-root/div/dss-nav/div/mli-nav/div/aside/div/mli-nav-item/div/div/div/div/div

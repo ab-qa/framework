@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Web Demo Suite" verbose="0" parallel="tests">
+	<listeners>
+		<listener class-name="com.quantum.listerners.QuantumReportiumListener" />
+	</listeners>
+	<!-- TODO: Provide DRIVERNAME (e.g. chromeDriver) -->
+	<parameter name="driver.name" value="chromeDriver" />
+	<!-- TODO: Review the chrome driver actual path -->
+	<parameter name="webdriver.chrome.driver" value="C:/Users/abhishek.a.a.kumar/Documents/chromedriver.exe" />
+	<parameter name="env.baseurl" value="https://dss-demo-dev.apps.eas.pcf.manulife.com/" />
+	
+	<!-- Locally testing web application on desktop -->
+	<test name="Web Testing" enabled="true">
+		<!--  <parameter name="scenario.file.loc" value="src/main/resources/scenarios" /> -->
+		<parameter name="env.resources" value="src/main/resources/web" />
+		<groups>
+			<run>
+			    <!-- TODO: Change the TagName to something in your Steps -->
+				<include name="@WebTesting" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+	</suite>
+	

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Demo Suite" verbose="0" parallel="tests" thread-count="100">
+	<listeners>
+		<listener class-name="com.quantum.listerners.QuantumReportiumListener"/>
+	</listeners>
+
+	<test name="Diff Region Data Sample UAT Android Test" enabled="true" thread-count="10">
+		<parameter name="driver.capabilities.model" value="Galaxy.*"></parameter>
+		<parameter name="env" value="uat"></parameter>
+		<groups>
+			<run>
+				<include name="@TestDiffEnvData" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+	<test name="Diff Region Data Sample SIT IOS Test" enabled="true" thread-count="10">
+		<parameter name="driver.capabilities.model" value="iPhone.*"></parameter>
+		<parameter name="env" value="sit"></parameter>
+		<groups>
+			<run>
+				<include name="@TestDiffEnvData" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+</suite>

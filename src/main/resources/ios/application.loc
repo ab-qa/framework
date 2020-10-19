@@ -1,0 +1,5 @@
+# define your objects model using xpath.
+# e.g.
+#lbl.uicatalog.menu.option=xpath=//XCUIElementTypeStaticText[@name='%s']
+#img.uicatalog.webview.apple.logo=css=.ac-gn-apple
+#btn.uicatalog.webview.menu=xpath=//*[contains(@class,'ac-gn-menuicon')]

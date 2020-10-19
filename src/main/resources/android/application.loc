@@ -1,0 +1,6 @@
+# define your objects model using xpath.
+# e.g. 
+#btn.flipkart.hamburger = xpath=//android.widget.ImageButton[@content-desc="Drawer"]
+#lbl.flipkart.hamburger.title=xpath=//*[@resource-id='com.flipkart.android:id/title' and @text='%s']
+#img.flipkart.gallery.second.promotion.banner=xpath=(//*[@resource-id='com.flipkart.android:id/promotions_banner'])[3]
+#layout.flipkart.gallery.filter=id=com.flipkart.android:id/filter_parent

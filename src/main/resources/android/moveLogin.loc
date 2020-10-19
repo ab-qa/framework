@@ -1,0 +1,2 @@
+manulife.move.language=xpath=//android.view.View[@content-desc="Continue with English"]
+manulife.move.letsgo=xpath=//android.view.View[@content-desc="Let's Go"]

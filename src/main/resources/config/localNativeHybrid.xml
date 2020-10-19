@@ -1,0 +1,112 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Appium Demo Suite" verbose="0" parallel="tests">
+	<listeners>
+		<listener class-name="com.quantum.listerners.QuantumReportiumListener" />
+	</listeners>
+	<parameter name="driver.name" value="appiumDriver" />
+	<parameter name="remote.server" value="http://0.0.0.0:4723/wd/hub"></parameter>
+	<parameter name="remote.port" value="4723"></parameter>
+	
+	<!-- Testcase to setup native android application using Appium utility. -->
+	<test name="Android Native Local Appium" enabled="true">
+		<parameter name="appium.capabilities.platformName" value="Android"></parameter>
+		<!-- <parameter name="appium.capabilities.platformVersion" value="7.1.1"></parameter> -->
+		<!-- TODO: Replace EMULATOR-ID with your emulator name (e.g. emulator-5554) -->
+		<parameter name="appium.capabilities.deviceName" value="emulator-5554"></parameter>
+		<!-- TODO: Replace %PATH%/your-app with full location of your app path (e.g. d:/myapks/myapp.apk) -->
+		<parameter name="appium.capabilities.app" value="C:\\Users\\abhishek.a.a.kumar\\Downloads\\MoveApp-moveDev-debug.apk"></parameter>
+		<parameter name="driver.capabilities.automationName" value="Appium"></parameter>
+		<!-- TODO: Replace package name with your Android apps package name (e.g. com.flipkart.android) -->
+		<parameter name="appium.capabilities.appPackage" value="com.manulife.ap.sit.move"></parameter>
+		<parameter name="appium.capabilities.appActivity" value="com.manulife.move3.activity.WelcomeActivity"></parameter>
+		<parameter name="appium.capabilities.noReset" value="true"></parameter>
+		<parameter name="env.resources" value="src/main/resources/android" />
+		<groups>
+			<run>
+			    <!-- TODO: Change the TagName to something in your Steps -->
+			    <include name="@MoveAndroid" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+	<!-- Testcase to run android hybrid application locally on Appium -->
+	<test name="Android Hybrid Local Appium" enabled="false">
+		<parameter name="driver.capabilities.chromedriverExecutable" value="%PATH%/chromedriver" />
+			<parameter name="appium.capabilities.platform" value="A"></parameter>
+		<parameter name="appium.capabilities.platformName" value="Android"></parameter>
+		<!-- TODO: Replace EMULATOR-ID with your emulator name (e.g. emulator-5554) -->
+		<parameter name="appium.capabilities.deviceName" value="EMULATOR-ID"></parameter>
+		<!-- TODO: Replace %PATH%/your-app with full location of your hybrid app apk (e.g. d:/myapks/myapp.apk) -->
+		<parameter name="appium.capabilities.app" value="C:\Users\abhishek.a.a.kumar\Downloads\MoveApp-moveDev-debug.apk"></parameter>
+		<parameter name="driver.capabilities.automationName" value="Appium"></parameter>
+		<!-- TODO: Replace package name with your Android apps package name (e.g. com.spellthem.webpages) -->
+		<parameter name="appium.capabilities.appPackage" value="com.manulife.ap.sit.move"></parameter>
+		<parameter name="appium.capabilities.appActivity" value="com.manulife.move3.activity.WelcomeActivity"></parameter>
+		<parameter name="appium.capabilities.noReset" value="true"></parameter>
+		<parameter name="env.resources" value="src/main/resources/android" />
+		<groups>
+			<run>
+			    <!-- TODO: Change the TagName to something in your Steps -->
+			    <include name="@TagName" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+	<!-- Testcase to run native iOS application on Appium -->
+	<test name="IOS Native Local Appium" enabled="false">
+		<parameter name="appium.capabilities.automationName" value="XCUITest"></parameter>
+		<parameter name="appium.capabilities.platformName" value="iOS"></parameter>
+		<!-- TODO: Replace DEVICE-NAME with simulator identifier (e.g. iPhone 6 10. 1)  -->
+		<parameter name="appium.capabilities.deviceName" value="DEVICE-NAME"></parameter>
+		<!-- TODO: Replace %PATH%/your-app with full location of your hybrid app ipa (e.g. d:/myapks/myapp.ipa) -->
+		<parameter name="appium.capabilities.app" value="%PATH%/your-app.ipa"></parameter>
+		<!-- TODO: Replace with your DEVICE-ID - when running tests using (e.g. 4E70038A-14F6-446B-ADE2-81BFC150223F) -->
+		<parameter name="appium.capabilities.udid" value="DEVICE-ID"></parameter>
+		<parameter name="appium.capabilities.startIWDP" value="true"></parameter>
+		<!-- TODO: Replace BUNDLE-ID with your application bundle id -->
+		<parameter name="appium.capabilities.bundleId" value="BUNDLE-ID"></parameter>
+		<parameter name="appium.capabilities.noReset" value="true"></parameter>
+		<parameter name="env.resources" value="src/main/resources/ios" />
+		<groups>
+			<run>
+			    <!-- TODO: Change the TagName to something in your Steps -->
+			    <include name="@TagName" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+	<test name="IOS Hybrid UICatalog Local Appium" enabled="false">
+		<parameter name="appium.capabilities.automationName" value="XCUITest"></parameter>
+		<parameter name="appium.capabilities.platformName" value="iOS"></parameter>
+		<!-- TODO: Replace DEVICE-NAME with simulator identifier (e.g. iPhone 6 10. 1)  -->
+		<parameter name="appium.capabilities.deviceName" value="DEVICE-NAME"></parameter>
+		<!-- TODO: Replace %PATH%/your-app with full location of your hybrid app ipa (e.g. d:/myapks/myapp.ipa) -->
+		<parameter name="appium.capabilities.app" value="%PATH%/your-app.ipa"></parameter>
+		<!-- TODO: Replace with your DEVICE-ID - when running tests using (e.g. 4E70038A-14F6-446B-ADE2-81BFC150223F) -->
+		<parameter name="appium.capabilities.udid" value="DEVICE-ID"></parameter>
+		<parameter name="appium.capabilities.startIWDP" value="true"></parameter>
+		<!-- TODO: Replace BUNDLE-ID with your application bundle id -->
+		<parameter name="appium.capabilities.bundleId" value="BUNDLE-ID"></parameter>
+		<parameter name="appium.capabilities.noReset" value="true"></parameter>
+		<parameter name="env.resources" value="src/main/resources/ios" />
+		<groups>
+			<run>
+			    <!-- TODO: Change the TagName to something in your Steps -->
+			    <include name="@TagName" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+</suite>
